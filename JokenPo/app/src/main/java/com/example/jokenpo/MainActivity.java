@@ -30,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void ObterResultado(String ObterResultado){
 
-        ImageView imagemResultado = findViewById(R.id.resultadoApp);
-        TextView textoResultado = findViewById(R.id.resultadoTexto);
-        TextView vitorias = findViewById(R.id.vitorias);
-        TextView derrotas = findViewById(R.id.derrotas);
+        ImageView imagemResultado   = findViewById(R.id.resultadoApp);
+        TextView textoResultado     = findViewById(R.id.resultadoTexto);
+        TextView vitorias           = findViewById(R.id.vitorias);
+        TextView derrotas           = findViewById(R.id.derrotas);
         int vitoria = 0;
         int derrota = 0;
         int numero = new Random().nextInt(3);
@@ -58,18 +58,20 @@ public class MainActivity extends AppCompatActivity {
                 (App == "papel" && ObterResultado == "pedra")
         ){ // App ganha
             textoResultado.setText("Voce Perdeu :v");
-
+            derrota+= 1;
+            derrotas.setText(Integer.toString(derrota));
+            System.out.println(derrota);
         }else if(
                 (ObterResultado == "pedra" && App == "tesoura") ||
                 (ObterResultado == "tesoura" && App == "papel") ||
                 (ObterResultado == "papel" && App == "pedra")
         ){ // Pessoa ganha
             textoResultado.setText("Voce Ganhou :)");
-
+            vitoria+= 1;
+            vitorias.setText(Integer.toString(vitoria));
         }else{ // Empate
             textoResultado.setText("## EMPATE ##");
         }
-        System.out.println(" Item Selecionado foi " + numero);
 
     }
 
