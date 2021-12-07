@@ -2,32 +2,32 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/resultadoLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundoApp"
-    tools:context=".resultado">
+    android:background="#65BC8D"
+    tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/imageResultado"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageVoltar"
+        app:layout_constraintBottom_toTopOf="@+id/imageJogar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@drawable/moeda_cara" />
+        app:srcCompat="@drawable/logo" />
 
     <ImageView
-        android:id="@+id/imageVoltar"
+        android:id="@+id/imageJogar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageResultado"
-        app:srcCompat="@drawable/botao_voltar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/botao_jogar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
