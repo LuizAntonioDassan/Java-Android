@@ -2,6 +2,7 @@ package com.example.caraoucoroa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -14,7 +15,7 @@ public class resultado extends AppCompatActivity {
 
     private ImageView imageResultado,imageVoltar;
     private View resultadoSnack;
-
+    private MediaPlayer coinFlip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,12 @@ public class resultado extends AppCompatActivity {
         imageResultado  = findViewById(R.id.imageResultado);
         imageVoltar     = findViewById(R.id.imageVoltar);
         resultadoSnack  = findViewById(R.id.resultadoLayout);
+        coinFlip        = MediaPlayer.create(getApplicationContext(), R.raw.coinflip);
+
+        if( coinFlip != null){
+            coinFlip.start();
+        }
+
 
         int numero = new Random().nextInt(2);
 
@@ -35,6 +42,9 @@ public class resultado extends AppCompatActivity {
             ).setAction( "Confirmar", new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if( coinFlip.isPlaying()){
+                        coinFlip.pause();
+                    }
                     finish();
                 }
             }).show();
@@ -48,6 +58,9 @@ public class resultado extends AppCompatActivity {
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+                            if( coinFlip.isPlaying()){
+                                coinFlip.pause();
+                            }
                             finish();
                         }
                     }).show();
@@ -56,6 +69,9 @@ public class resultado extends AppCompatActivity {
         imageVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if( coinFlip.isPlaying()){
+                    coinFlip.pause();
+                }
                 finish();
             }
         });

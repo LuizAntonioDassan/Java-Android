@@ -3,12 +3,14 @@ package com.example.caraoucoroa;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView buttonJogar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), resultado.class);
 
                 startActivity( intent );
+
             }
         });
     }
