@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Registro</string>
+    <string name="gasto_name">Adicionar Gastos</string>
+    <string name="preco_name">Adicionar Preço</string>
+    <string name="data_name">Adicionar Data</string>
+    <string name="cartao_name">Adicionar Cartão</string>
+</resources>
