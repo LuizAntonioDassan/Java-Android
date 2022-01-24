@@ -39,11 +39,10 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.MyViewHolder
 
     @Override
     public int getItemCount() {
-        int size = this.listaDeGastos.size();
-        return size;
+        return this.listaDeGastos.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView gasto;
 
         public MyViewHolder(@NonNull View itemView) {

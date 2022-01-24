@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import com.example.registro.R;
 import com.example.registro.adapter.ListaAdapter;
 import com.example.registro.helper.RecyclerItemClickListener;
+import com.example.registro.helper.RegistroDAO;
 import com.example.registro.helper.dbhelper;
 import com.example.registro.model.gasto;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -77,17 +78,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void carregarListaDeGastos(){
         //lista
-        gasto gasto1 = new gasto();
-        gasto1.setNomeGasto("Mercado");
-        listaDeGastos.add(gasto1);
-
-        gasto gasto2 = new gasto();
-        gasto2.setNomeGasto("Barbearia");
-        listaDeGastos.add(gasto2);
-
-        gasto gasto3 = new gasto();
-        gasto3.setNomeGasto("Livros");
-        listaDeGastos.add(gasto3);
+        RegistroDAO registroDAO = new RegistroDAO(getApplicationContext());
+        listaDeGastos = registroDAO.gastar();
         // exibe a lista
         System.out.println(listaDeGastos);
         //configura um adapter
