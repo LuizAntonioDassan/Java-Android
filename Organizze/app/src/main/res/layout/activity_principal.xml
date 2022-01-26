@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PrincipalActivity">
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu_colorNormal="@color/Acent"
+        app:menu_colorPressed="@color/Acent"
+        fab:menu_icon="@drawable/fab_add">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_despesas"
+            android:onClick="adicionarDespesas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            app:fab_label="Despesas"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/Acent"
+            >
+
+        </com.github.clans.fab.FloatingActionButton>
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_receita"
+            android:onClick="adicionarReceita"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/fab_add"
+            app:fab_label="Receita"
+            app:fab_size="mini"
+            app:fab_colorNormal="@color/primaria">
+
+        </com.github.clans.fab.FloatingActionButton>
+    </com.github.clans.fab.FloatingActionMenu>
+</androidx.constraintlayout.widget.ConstraintLayout>

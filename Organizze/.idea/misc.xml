@@ -6,9 +6,15 @@
         <entry key="..\:/Android Java/Organizze/app/src/main/res/drawable/ic_cadeado_cinza.xml" value="0.2203125" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/drawable/ic_email.xml" value="0.1" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/drawable/ic_pessoa_cinza.xml" value="0.1" />
+        <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_area_principal.xml" value="0.22" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_cadastrar.xml" value="0.33" />
+        <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_despesas.xml" value="0.33" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_main.xml" value="0.1648148148148148" />
+        <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_principal.xml" value="0.33" />
+        <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/activity_receitas.xml" value="0.33" />
+        <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/content_area_principal.xml" value="0.2" />
+        <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/fragment_first.xml" value="0.13425925925925927" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/intro_1.xml" value="0.33" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/intro_2.xml" value="0.33" />
         <entry key="..\:/Android Java/Organizze/app/src/main/res/layout/intro_3.xml" value="0.25" />

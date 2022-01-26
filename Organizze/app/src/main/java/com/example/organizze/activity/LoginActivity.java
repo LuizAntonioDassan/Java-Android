@@ -1,13 +1,14 @@
 package com.example.organizze.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.organizze.R;
 import com.example.organizze.config.ConfiguracaoFirebase;
@@ -17,8 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -78,14 +78,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if( task.isSuccessful()){
-                    Toast.makeText(LoginActivity.this,
-                            "Sucesso ao realizar Login",
-                            Toast.LENGTH_SHORT).show();
+
+                    abrirTelaPrincipal();
+
                 }else{
                     String excecao = "";
                     try{
                         throw task.getException();
-                    }catch (FirebaseAuthInvalidCredentialsException e){
+                    }catch (FirebaseAuthInvalidUserException e){
                         excecao = "Digite um Email Válido";
                     }catch (FirebaseAuthInvalidCredentialsException e){
                         excecao = "Email e Senha nao correspondentes";
@@ -100,8 +100,12 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
+
+    public  void abrirTelaPrincipal(){
+
+        startActivity(new Intent( this, PrincipalActivity.class));
+        finish();
+    }
+
 }

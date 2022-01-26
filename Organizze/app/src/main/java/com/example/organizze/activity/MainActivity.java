@@ -1,19 +1,18 @@
 package com.example.organizze.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.organizze.R;
-import com.example.organizze.activity.Cadastrar_Activity;
-import com.example.organizze.activity.LoginActivity;
+import com.example.organizze.config.ConfiguracaoFirebase;
+import com.google.firebase.auth.FirebaseAuth;
 import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
-import com.heinrichreimersoftware.materialintro.slide.SimpleSlide;
 
 public class MainActivity extends IntroActivity {
+
+    FirebaseAuth autenticacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +96,12 @@ public class MainActivity extends IntroActivity {
         */
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        verificarUsuarioLogado();
+    }
+
     public void btEntrar(View view){
         startActivity(new Intent(this, LoginActivity.class));
 
@@ -104,6 +109,20 @@ public class MainActivity extends IntroActivity {
     public void btCadastrar(View view){
         startActivity(new Intent(this, Cadastrar_Activity.class));
 
+    }
+
+    public void verificarUsuarioLogado(){
+
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        //autenticacao.signOut();
+        if( autenticacao.getCurrentUser() != null){
+            abrirTelaPrincipal();
+        }
+
+    }
+
+    public  void abrirTelaPrincipal(){
+        startActivity(new Intent( this, PrincipalActivity.class));
     }
 
 }

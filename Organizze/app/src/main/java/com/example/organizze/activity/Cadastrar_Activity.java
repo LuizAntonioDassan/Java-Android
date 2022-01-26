@@ -1,16 +1,17 @@
 package com.example.organizze.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.organizze.R;
 import com.example.organizze.config.ConfiguracaoFirebase;
+import com.example.organizze.helper.Base64Custom;
 import com.example.organizze.model.Usuario;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -84,9 +85,11 @@ public class Cadastrar_Activity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    Toast.makeText(Cadastrar_Activity.this,
-                            "Sucesso ao Cadastrar usuário",
-                            Toast.LENGTH_SHORT).show();
+                    String idUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                    usuario.setIdUsuario(idUsuario);
+                    usuario.salvar();
+                    finish();
+
                 }else{
 
                     String excecao = "";
