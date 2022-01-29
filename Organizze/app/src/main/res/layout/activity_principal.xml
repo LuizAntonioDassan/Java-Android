@@ -7,7 +7,75 @@
     android:layout_height="match_parent"
     tools:context=".activity.PrincipalActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="160dp"
+        android:background="@color/primaria"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textSaudacao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Carregando..."
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textSaldo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="R$ 0"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Saldo Geral"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:mcv_tileSize="50dp"
+        fab:mcv_selectionColor="#00F"
+        fab:mcv_showOtherDates="all" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMovimentos"
+        android:layout_width="0dp"
+        android:layout_height="325dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="190dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
+
     <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/floatingActionMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -20,27 +88,41 @@
         fab:menu_icon="@drawable/fab_add">
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/menu_despesas"
-            android:onClick="adicionarDespesas"
+            android:id="@+id/menu_sair"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="deslogar"
             android:src="@drawable/fab_add"
-            app:fab_label="Despesas"
-            app:fab_size="mini"
-            app:fab_colorNormal="@color/Acent"
-            >
+            app:fab_colorNormal="@color/botaoSair"
+            app:fab_label="Sair da conta"
+            app:fab_size="mini">
 
         </com.github.clans.fab.FloatingActionButton>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_despesas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="adicionarDespesas"
+            android:src="@drawable/fab_add"
+            app:fab_colorNormal="@color/Acent"
+            app:fab_label="Despesas"
+            app:fab_size="mini">
+
+        </com.github.clans.fab.FloatingActionButton>
+
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/menu_receita"
-            android:onClick="adicionarReceita"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="adicionarReceita"
             android:src="@drawable/fab_add"
+            app:fab_colorNormal="@color/primaria"
             app:fab_label="Receita"
-            app:fab_size="mini"
-            app:fab_colorNormal="@color/primaria">
+            app:fab_size="mini">
 
         </com.github.clans.fab.FloatingActionButton>
+
     </com.github.clans.fab.FloatingActionMenu>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

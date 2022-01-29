@@ -13,8 +13,17 @@ public class Movimentacao {
     private String  descricao;
     private String  tipo;
     private double valor;
+    private String chave;
 
     public Movimentacao() {
+    }
+
+    public String getChave() {
+        return chave;
+    }
+
+    public void setChave(String chave) {
+        this.chave = chave;
     }
 
     public void salvar(String data){

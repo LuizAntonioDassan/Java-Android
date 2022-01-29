@@ -33,6 +33,8 @@ public class Cadastrar_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
 
+        getSupportActionBar().setTitle("Cadastro");
+
         campoEmail  = findViewById(R.id.emailCadastro);
         campoNome   = findViewById(R.id.nomeCadastro);
         campoSenha  = findViewById(R.id.senhaCadastro);

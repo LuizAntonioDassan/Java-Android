@@ -6,19 +6,22 @@
     android:layout_height="match_parent"
     android:layout_gravity="center"
     android:orientation="vertical"
-    tools:context=".activity.ReceitasActivity">
+    tools:context=".activity.DespesasActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
+        android:layout_width="0dp"
         android:layout_height="120dp"
         android:background="@color/colorPrimaryDespesas"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editValor"
+            android:id="@+id/editValorDespesas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -44,7 +47,7 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editData"
+            android:id="@+id/editDataDespesas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -58,19 +61,19 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:hint="Ex: Salário"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+        app:layout_constraintBottom_toTopOf="@+id/editText3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText1">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editaCategoria"
+            android:id="@+id/editCategoriaDespesas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/editText3"
         android:layout_width="379dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -85,7 +88,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editDescricao"
+            android:id="@+id/editDescricaoDespesas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -95,14 +98,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
         android:onClick="salvarDespesas"
         android:src="@drawable/ic_confirmar"
         app:fab_colorNormal="@color/Acent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

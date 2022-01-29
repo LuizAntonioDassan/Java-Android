@@ -21,13 +21,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editValor"
+            android:id="@+id/editValorReceita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="right"
+            android:hint="R$ 00.00"
             android:inputType="textPersonName|numberDecimal"
-            android:text="R$ 00.00"
             android:textSize="30dp" />
     </LinearLayout>
 
@@ -47,6 +47,7 @@
         app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDataReceita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -60,18 +61,19 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:hint="Ex: Salário"
-        app:layout_constraintBottom_toTopOf="@+id/editDescricao"
+        app:layout_constraintBottom_toTopOf="@+id/editDescricaoDespesas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText1">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editCategoriaReceita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/editDescricao"
+        android:id="@+id/editDescricaoDespesas"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -84,19 +86,20 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editDescricaoReceita"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fabReceitas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="32dp"
         android:clickable="true"
-        android:onClick="registrar"
+        android:onClick="salvarReceitas"
         android:src="@drawable/ic_confirmar"
         app:fab_colorNormal="@color/Acent"
         app:layout_constraintBottom_toBottomOf="parent"

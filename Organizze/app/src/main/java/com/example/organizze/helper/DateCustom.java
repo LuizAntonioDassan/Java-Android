@@ -19,8 +19,8 @@ public class DateCustom {
         String mes = retornoData[1];
         String ano = retornoData[2];
 
-        String diaMes = dia + mes;
-        return diaMes;
+        String mesAno = mes + ano;
+        return mesAno;
 
 
     }
