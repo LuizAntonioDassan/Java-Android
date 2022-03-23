@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SearchView;
 
 import com.example.videoyoutube.R;
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SearchView searchView;
     private List<Video> videos = new ArrayList<>();
-    private AdapterVideo adapterVideo/
+    private AdapterVideo adapterVideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
-        searchView = findViewById(R.id.searchView);
+        //searchView = findViewById(R.id.searchView);
 
 
 
@@ -36,12 +37,14 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Youtube");
         setSupportActionBar( toolbar );
 
+        recuperarVideos();
+        Log.i("teste" , videos.get(0).getTitulo());
         //RecyclerVideos
         adapterVideo = new AdapterVideo(videos,this);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //RecyclerAdapter
-
+        recyclerView.setAdapter(adapterVideo);
 
     }
 
