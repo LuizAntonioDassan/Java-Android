@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         //captura a URL e converte o JSON
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com")
+                .baseUrl("https://viacep.com.br/ws/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -62,15 +62,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Usando a biblioteca Retrofit
-                recuperarListaRetrofit();
-                Log.d("teste", "ok");
+                //recuperarListaRetrofit();
+                //Log.d("teste", "ok");
 
 
-                /*if(!cepText.equals("") && cepText.length() == 8){
+                if(!cepText.equals("") && cepText.length() == 8){
                     recuperarCepRetrofit();
                 }else{
                     Toast.makeText(MainActivity.this, "Insira um Cep valido", Toast.LENGTH_SHORT).show();
-                }*/
+                }
 
 
                 //Recuperando API direto do JSON
@@ -115,12 +115,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
-
-
-
-
         private void recuperarCepRetrofit(){
         CEPService cepService = retrofit.create(CEPService.class);
         Call<CEP> call = cepService.recuperarCep(cepText.getText().toString());
@@ -141,15 +135,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-
-
-
-
-
-
-
-
 
     class MyTasks extends AsyncTask<String, Void, String>{
 
@@ -199,44 +184,44 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            /*
+
             String bairro = null;
             String cep = null;
             String logradouro = null;
             String complemento = null;
             String localidade = null;
-            String uf = null;*/
+            String uf = null;
 
-            String moeda = null;
+            /*String moeda = null;
             String valorMoeda = null;
-            String simbolo = null;
+            String simbolo = null;*/
 
             try {
                 JSONObject jsonObject = new JSONObject(s);
-                /*  Objeto Simples
+                //  Objeto Simples
                 bairro = jsonObject.getString("bairro");
                 cep = jsonObject.getString("cep");
                 logradouro = jsonObject.getString("logradouro");
                 complemento = jsonObject.getString("complemento");
                 localidade = jsonObject.getString("localidade");
                 uf = jsonObject.getString("uf");
-                */
 
-                //Objeto dentro de Objeto JSON
+
+                /*//Objeto dentro de Objeto JSON
                 moeda = jsonObject.getString("BRL");
                 //ObjetoInterno
                 JSONObject jsonObjectValor = new JSONObject(moeda);
                 valorMoeda = jsonObjectValor.getString("last");
-                simbolo = jsonObjectValor.getString("symbol");
+                simbolo = jsonObjectValor.getString("symbol");*/
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
-            /*texto.setText(bairro + " / " + cep + " / " + logradouro + " / " + complemento
-                    + " / " + localidade + " / " + uf);*/
+            texto.setText(bairro + " / " + cep + " / " + logradouro + " / " + complemento
+                    + " / " + localidade + " / " + uf);
 
-            texto.setText(simbolo + " : " + valorMoeda);
+            //texto.setText(simbolo + " : " + valorMoeda);
         }
     }
 

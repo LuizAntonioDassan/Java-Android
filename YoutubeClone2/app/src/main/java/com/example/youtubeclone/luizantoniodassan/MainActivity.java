@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.youtubeclone.luizantoniodassan.model.Video;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends YouTubeBaseActivity
             implements YouTubePlayer.OnInitializedListener{
@@ -17,6 +21,8 @@ public class MainActivity extends YouTubeBaseActivity
     private static final String GOOGLE_API_KEY = "AIzaSyCjiMWKADhz-fVNl0an6LaIid26Eg0Wrms";
     private YouTubePlayer.PlaybackEventListener playbackEventListener;
     private YouTubePlayer.PlayerStateChangeListener playerStateChangeListener;
+
+    private List<Video> videos = new ArrayList<>();
 
 
 
@@ -86,6 +92,19 @@ public class MainActivity extends YouTubeBaseActivity
                 Toast.makeText(MainActivity.this, "Video movendo a seekBar", Toast.LENGTH_SHORT).show();
             }
         };
+
+    }
+
+
+    private void recuperarVideo(){
+
+        Video video1 = new Video();
+        video1.setTitulo("Video 1 muito interessante");
+        videos.add(video1);
+
+        Video video2 = new Video();
+        video2.setTitulo("Video 2 muito interessante");
+        videos.add(video2);
 
     }
 
