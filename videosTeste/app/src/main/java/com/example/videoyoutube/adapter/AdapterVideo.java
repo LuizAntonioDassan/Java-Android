@@ -47,7 +47,7 @@ public class AdapterVideo  extends RecyclerView.Adapter<AdapterVideo.MyViewHolde
 
     @Override
     public int getItemCount() {
-        return 0;
+        return videos.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
@@ -55,7 +55,7 @@ public class AdapterVideo  extends RecyclerView.Adapter<AdapterVideo.MyViewHolde
         TextView titulo;
         TextView descricao;
         TextView data;
-        TextView capa;
+        ImageView capa;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);

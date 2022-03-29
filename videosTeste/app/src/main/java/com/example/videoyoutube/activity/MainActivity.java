@@ -41,8 +41,10 @@ public class MainActivity extends AppCompatActivity {
         Log.i("teste" , videos.get(0).getTitulo());
         //RecyclerVideos
         adapterVideo = new AdapterVideo(videos,this);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //RecyclerAdapter
         recyclerView.setAdapter(adapterVideo);
 
